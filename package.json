@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-flot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Adds flot charts to an ember-cli application",
   "directories": {
     "doc": "doc",
