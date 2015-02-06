@@ -12,10 +12,6 @@ module.exports = {
       };
     var flotPath = 'bower_components/flot/';
     var modulePath = path.relative(app.project.root, __dirname);
-    var path_join = function () {
-      // fix path with windows back slash with path_join
-      return path.join.apply(this, arguments).replace(/\\/g, '/');
-    };
 
     var emberCLIVersion = app.project.emberCLIVersion().split(',').map(function (item) {
       return Number(item);
@@ -24,7 +20,7 @@ module.exports = {
       throw new Error('ember-cli-flot requires ember-cli version 0.1.8 or greater.\n');
     }
 
-    app.import(path_join(flotPath, 'jquery.flot.js'));
+    app.import(flotPath + 'jquery.flot.js');
 
     // Import JS from flot
     if (o.plugins instanceof Array) {
@@ -43,7 +39,7 @@ module.exports = {
         }).filter(function (file) {
           return file !== "jquery.flot.js" && file.startsWith("jquery.flot.")
         }).forEach(function (file) {
-          app.import(path_join(flotPath, file));
+          app.import(flotPath + file);
         })
       });
 
