@@ -7,11 +7,8 @@ module.exports = {
     this.app = app;
     var configMessage = [];
     var fs = require("fs"), path = require('path');
-    var o = app.options['ember-cli-flot'] || {
-        plugins: true
-      };
+    var o = app.options['ember-cli-flot'];
     var flotPath = 'bower_components/flot/';
-    var modulePath = path.relative(app.project.root, __dirname);
 
     var emberCLIVersion = app.project.emberCLIVersion().split(',').map(function (item) {
       return Number(item);
@@ -28,24 +25,6 @@ module.exports = {
         app.import(flotPath + 'jquery.flot.' + fileName + '.js');
       });
       configMessage.push('some plugins loaded [' + o.plugins.join(',') + ']');
-    } else if (o.js !== false) {
-      fs.readdir(flotPath, function (err, files) {
-        if (err) {
-          throw err;
-        }
-
-        files.filter(function (file) {
-          return fs.statSync(file).isFile();
-        }).filter(function (file) {
-          return file !== "jquery.flot.js" && file.startsWith("jquery.flot.")
-        }).forEach(function (file) {
-          app.import(flotPath + file);
-        })
-      });
-
-      configMessage.push('all plugins enabled');
-    } else {
-      configMessage.push('no plugins enabled');
     }
 
     if (o.quiet !== false) {
