@@ -1,4 +1,4 @@
-# Ember-cli-jquery-flot
+# Ember-cli-flot
 
 This README outlines the details of collaborating on this Ember addon.
 

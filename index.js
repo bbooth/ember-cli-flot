@@ -2,12 +2,12 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-cli-jquery-flot',
+  name: 'ember-cli-flot',
   included: function (app) {
     this.app = app;
     var configMessage = [];
     var fs = require("fs"), path = require('path');
-    var o = app.options['ember-cli-flot'];
+    var o = app.options['ember-cli-flot'] || {};
     var flotPath = 'bower_components/flot/';
 
     var emberCLIVersion = app.project.emberCLIVersion().split(',').map(function (item) {
