@@ -1,3 +1,6 @@
+### Status
+[![Build Status](https://travis-ci.org/bbooth/ember-cli-flot.png)](https://travis-ci.org/bbooth/ember-cli-flot)
+
 # ember-cli-flot
 
 ember-cli-flot is an ember-cli addon for using flot charts.  There are a couple companion addons as well like ember-cli-flot-spline and ember-cli-flot-tooltip
