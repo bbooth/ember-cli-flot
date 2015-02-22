@@ -21,35 +21,6 @@ test('default plot height', function () {
   equal(this.$().height(), 300);
 });
 
-test('default plot data', function () {
-  var component = this.subject();
-  var actualData = null;
-
-  Ember.run(function () {
-    actualData = component.get("data");
-  });
-  console.log(actualData);
-
-  equal(component.get("data"), []);
-});
-
-test('default plot options', function () {
-  var component = this.subject();
-  equal(component.get("options"), {});
-});
-
-test('plot height changes', function () {
-  var component = this.subject();
-
-  equal(this.$().height(), 300);
-
-  Ember.run(function () {
-    component.set('height', "200px");
-  });
-
-  equal(this.$().height(), 200);
-});
-
 test('plot height changes', function () {
   var component = this.subject();
 
