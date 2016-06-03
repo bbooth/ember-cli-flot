@@ -15,5 +15,5 @@ export default Ember.Component.extend({
 
     var plot = $this.plot(this.get('data'), this.get('options')).data("plot");
     this.set('plot', plot);
-  }.on('didInsertElement', 'dataChanged', 'optionsChanged')
+  }.on('didInsertElement', 'didUpdateAttrs')
 });
